@@ -1,0 +1,466 @@
+NodeJS
+
+Created by Ryan Dahl in 2009
+It uses Google Chrome V8 runtime engine which is written in C++
+It also uses LIBUV which is a multi-platform support library with a focus on asynchronous I/O
+Single Threaded
+Event Driven
+Non-Blocking or Asynchronous I/O
+-Why orgs use it
+	Server
+	Application
+	Data
+
+	Write all code in JavaScript
+	Easy to mod and maintain
+	Faster Dev time
+	Better performance because non-blocking or async I/O
+-How it works
+	Client sends request
+	Event Loop (Single thread) gets it 
+	It gets passed to non-blocking worker
+	Response is sent back to main thread via callback.
+
+-NodeJS Frameworks- Helps structure your application
+
+	Database
+	Routing
+	Session
+	Logging
+	Content Customization
+	User Auth
+	Scalability
+
+	Express.js
+		Web framerwork
+		Host and mobile app and API
+		Multiple Routing, DB Integration, Template Engines
+	MEAN.js (MongoDB, Express.js, Angular.js and Node.js)
+		Web app using NoSQL db like Mongo
+		With Angular as front end and Express.js/Node.js for the backend
+		Grunt tool for automated testing
+	Meteor
+		MVC for websites and web/mobile
+		OS X, Linux and Windows
+		Client and server parts
+	Hapi.js
+		For API's
+		Inout validation, Configuration-based, Functionality, Error Handling, Logging and Cachig
+	Socket.io
+		For building real-time web apps
+		Allows event-driven, bidirectional communication between client and server
+		Socket.IO works as a client-side library running in the browser and as a server-side for node.js
+		Allows real-time concurrency for document collaboration and data exchange
+	Mojito
+		MVC
+		Run on both client and server
+		Data Fetching
+		Unit Testing
+	Sails.js
+		offers a MVC pattern
+		Built on top of Node.js and Express.js
+		For Browse and mobile based apps
+	Kao.js
+		For Web apps and API's
+		
+	Derby
+		MVC for client and server
+		For mobile and web apps
+		Support HTML templates for rendering
+	Total.js
+		MVC
+		Friendly with backbone, Angular.js
+
+- http://Node.js
+https://nodejs.org/en/
+
+-Editors
+	Visual Code
+	Webmatrix for windows 
+
+-JavaScript
+	Programming language built into the browser. Focused primarily on
+	making the web pages interactive. Now extended to server side.
+
+-Closures
+	In JS can be defined as something which wraps up an entire env binding
+	necessary variables from other sources
+
+-Objects
+	var obj = new Object()
+	var obj = {}
+	function Person(name, age){
+		this.name = name
+		this.age = age
+		function setTitle(title){
+
+		}
+
+	} 
+	var person = new Person("Peter", 38)
+
+-Object prototype
+	All objects inherit from the Object.prototype
+
+-HTML 5
+	Local Storage
+		Persists the data forever until it's deleted programmatically or via Developer
+		localStorage.getItem("prop")
+		localStorage.setItem("prop", 1)
+	Session Storage
+		Based on Tab Sessions. For every tab there is a new sessions
+		sessionStorage.getItem("prop")
+		sessionStorage.setItem("prop", 1);
+
+	Web sockets
+		It is a persistent connection
+		It always start on the client
+		The implementation have to be on both server and client
+
+		Attributes:
+		URL to the server 
+		Ready state
+			0 Connecting
+			1 Open
+			2 Closing
+			3 Closed
+		Protocol
+
+		Methods:
+		Send
+		Close
+
+		Events:
+		Open
+		Close
+		Error
+		Message from the server
+
+-Node.js
+	REPL	
+		.save
+		.load
+		.exit
+		.help
+		.clear .break
+		_ last result
+
+	global.process
+	global.process.versions
+	process.cwd()
+	process.nextTick
+	process.stdout.write
+
+	Global Namespace
+		Objects that are available to all apps
+		global This shows the global variables entered in the REPL not globals in a file 
+
+	Buffers
+		fs.readFile()
+		buffer = new Buffer()
+		buffer.write
+		buffer.toString
+
+	Callbacks
+		fs.readFile('sample.txt',function(err,data){
+ 		if(err) return console.log(err);
+   		console.log(data.toString());
+		});
+
+-Modules
+	It is a reusable piece of code that can be reused across apps
+	module.exports = functionName;
+	var greet=require('./modules.js')
+
+	https://www.npmjs.com
+
+-npm
+	^ minor version
+	~ patch version
+	* latest version
+	npm init
+	npm install express --save  //--save means dependency on the package
+
+-How to publish npm modules to npm
+	npm init
+	create an account on npm or npm addUser
+	if you have an account npl login
+	To confirm it was created npm config ls or www.npmjs.com/~username
+	npm publish
+	Now you can install with npm install moduleName
+	in REPLE var module=require('sb-module-pkg');
+	to update npm version patch
+
+-Caching
+	var module=require('./module.js') //this caches the module
+	//to solve that caching problem we use
+
+	Function scope
+	module.exports = function () {
+    
+    	var data;
+    	var _version = "1.0.0";
+
+    	function version() {
+        	return _version;
+    	}
+
+    	var functions = {
+
+        	set: function set(arg) {
+            	data = arg;
+        	},
+        	get: function get() {
+            		console.log(version());
+            	return data;
+        	}
+
+    	};
+
+    	return functions;
+	}
+	
+	Factory Pattern
+
+	var Module = function () {
+
+    	var data;
+    	var _version = "1.0.0";
+
+    	function version() {
+        	return _version;
+    	}
+
+    	this.set = function set(arg) {
+        	data = arg;
+    	}
+
+    	this.get = function get() {
+        	console.log(version());
+        	return data;
+    	}
+
+	};
+
+	Option 1
+	//module.exports = function () {
+	//    var obj = new Module();
+	//    return obj;
+	//}
+
+	Option2 
+	module.exports = Module;
+
+	For Option 1 we use
+	var module = require('./module-factory.js');
+	var mod=module();
+
+	For Option 2 we use
+	var module = require('./module-factory.js');
+	var mod = new module();
+
+-Events and Events Emmitter
+
+	var EventEmitter = require('events').EventEmitter;
+	var log = new EventEmitter();
+
+	log.on('info',function(msg){
+		console.log('Info:'+msg);
+	})
+	'info' is the name of the event.
+	
+	Inheritance
+	Option 1
+	var util=require('util');
+	var EventEmitter = require('events').EventEmitter;
+
+	function Logger(){
+    		this.message = "logger";
+	}
+
+	util.inherits(Logger,EventEmitter);
+
+	Option 2
+	"use strict";
+	var EventEmitter = require('events').EventEmitter;
+
+	class Logger extends EventEmitter {
+
+-Streams
+	Allows to read data from a source
+	Readable
+	Writable
+	Duplex
+	Piping
+	Chaining
+	Readable.unpipe()
+		.pause()
+		.resume()
+
+
+-Async Programming
+	var fs = require('fs');
+	fs.readFile("sample.txt",callback);
+	console.log("Let's proceed with other stuff");
+
+	function callback(err,content){
+ 
+    		if(err){
+        		console.error(err);
+    		}
+    		else{
+        		console.log(content.toString());
+        		console.log("File Read Successfully");
+    		}
+
+	}
+
+	Promises
+		ES6 mechanism to handle async ops
+		Same as Callbacks but improved readability via methods chaining and simple error handling
+
+	Generators
+		Special functions that returns an iterator.
+		function* read(){
+			yield 
+
+
+	Callback Hell
+
+-Webserver
+	var http = require('http'); //require module http
+
+	http.createServer(function(request,response){
+    	response.writeHead(200,{"content-type":"text/html"}); //status code in header
+    	response.write("<h1>Welcome to Node.Js Server</h1>"); //response body
+    	response.end(); //closed the connection
+	}).listen(8080);
+
+	npm install --save node-static
+		
+
+-Express.js
+	Easy route URLs to callbacks
+	Middleware
+	Env based configuration
+	Redirection Helpers
+	File Uploads
+	Provides basic structure for the web app
+	Can be used to create API using MVC pattern
+	Use of template engines like Jade, EJS
+	
+	http://expressjs.com
+	Installation of expressjs
+	npm install -g express
+	npm view express version
+
+	As a dependency
+	npm install express --save
+
+	-To check which packages are installed by npm
+	npm list -g --depth 0
+
+	-Embedded JavaScript template (ejs)
+	npm install ejs --save
+
+	-partials
+	-share content
+		var date = new Date();
+		var year=date.getFullYear();
+		webapp.locals.footnote = "© "+year;
+
+	Express Generator
+		npm install -g express-generator
+
+		To create the new project
+		express -e projectName
+		cd projectName
+		npm install
+		DEBUG=myproject:* npm start
+
+		app.js is middleware for handling logic on the request
+		
+
+
+	Heroku
+		git init
+		git add .
+		git commit -m "SB Express App"
+		heroku login
+		heroku git:remote -a skillbakery
+		git push heroku master
+
+	MySQL password
+		Junk1234
+
+	CREATE TABLE courses ( id BIGINT NOT NULL AUTO_INCREMENT, title VARCHAR(45) NULL, price DOUBLE NULL, description TEXT NULL, image VARCHAR(45) NULL, isPopular BIT NULL, PRIMARY KEY (id));
+
+
+
+insert into courses values (1, 'Master React JS', 89, 'Master the basics of ReactJS and be ready for the future of web development.', '/images/7.jpg', 1);
+insert into courses values (2, 'Master AngularJS', 89, 'Master AngularJS and learn how to develop web applications including Single Page Applications (SPAs) using AngularJS', '/images/6.jpg', 1);
+insert into courses values (3, 'Master KnockoutJS', 89, 'Learn KnockoutJS - JavaScript implementation of the MVVM-Model View View Model with easy to understand examples.', '/images/2.jpg', 1);
+insert into courses values (4, 'Amazon Web Lamp Setup', 89, 'This course helps you in creating a Linux instance and installing PHP,MySQL and more stuff on Amazon EC2 instance.', '/images/3.jpg', 1);
+insert into courses values (5, 'Advanced jQuery Tips', 89, 'Explore various tips and tricks to get the most out of jQuery when building web applications', '/images/4.jpg', 0);
+insert into courses values (6, 'Browser Developer Tools', 89, 'Get to know various Browser Developer Tools for popular browsers & use them to debug & speed up your development process', '/images/5.jpg', 0);
+insert into courses values (7, 'Master Backbone.js', 89, 'Learn to create dynamic & modular web applications using BackboneJS framework', '/images/8.jpg', 0);
+
+npm install mysql
+
+To fix issue between MySQL and nodejs not supporting new id encryption
+
+To fix MongoDb on Mac Catalina
+
+brew uninstall mongodb
+brew tap mongodb/brew
+
+brew install mongodb-community
+
+mongod --dbpath ./data/db //the directories should be created before
+
+mongoimport --db skillbakery --collection courses --drop --file courses.json
+
+mongo  //this will open a mongo shell, then type
+
+use skillbakery     //the db
+
+db.courses.find()
+
+To connect to mongo db from Express JS we need mongoose
+
+npm install mongoose
+
+mongoimport --db skillbakery --collection courses  --file course1.json
+mongoimport --db skillbakery --collection courses  --file course2.json
+mongoimport --db skillbakery --collection courses  --file course3.json
+mongoimport --db skillbakery --collection courses  --file course4.json
+mongoimport --db skillbakery --collection courses  --file course5.json
+mongoimport --db skillbakery --collection courses  --file course6.json
+mongoimport --db skillbakery --collection courses  --file course7.json
+
+-Mongolab
+
+https://mlab.com/login/
+
+-Authentication
+
+npm install passport --save
+npm install passport-local --save
+npm install mongoose --save
+npm install --save express-session
+npm install --save bcrypt-nodejs
+npm install connect-flash --save
+
+
+
+
+
+
+
+	
+		
+
+
+
+
+	

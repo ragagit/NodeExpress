@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Login</title>
+        <!--mobile setting-->
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <!--css inclusion-->
+        <link rel="stylesheet" href="/stylesheets/style.css" type="text/css">
+    </head>
+    <body>
+        <section class="container">
+            <section class="form-container">
+             <% if(typeof(message)!='undefined' && message!="") { %>
+               <p class="btn btn-primary fullwidth"><%= message %></p>
+             <% } %>
+             <section class="form-group text-center">
+                        <h1>User Info</h1>
+                       <ul class="list-inline">
+                          <li><strong>First Name: </strong><%= user.firstName %></li><br>
+                          <li><strong>Last Name: </strong><%= user.lastName %></li><br>
+                          <li><strong>Email: </strong><%= user.email %></li><br>
+                          <li><strong>User Name: </strong><%= user.username %></li>
+                       </ul>
+                    </section>
+            </section>
+        </section>
+    </body>
+</html>

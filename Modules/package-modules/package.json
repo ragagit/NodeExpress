@@ -1,0 +1,14 @@
+{
+  "name": "sb-module-pkg",
+  "version": "1.0.2",
+  "description": "sample Module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "skillbakery"
+  ],
+  "author": "SkillBakery <contact@skillbakery.com> (http://skillbakery.com)",
+  "license": "ISC"
+}

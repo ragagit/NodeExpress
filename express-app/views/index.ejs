@@ -1,0 +1,17 @@
+<html>
+<head>
+        <title><%= title %></title>
+</head>
+<body>
+  We offer following courses
+
+<% if(typeof(courses) !='undefined' ) { %>  
+<ul>
+<% for(var i=0;i<courses.length;i++) { %>
+  <li><%= courses[i] %></li>
+<% } %>
+</ul>
+<% } %>
+ <%= locals.footnote %>
+</body>
+</html>

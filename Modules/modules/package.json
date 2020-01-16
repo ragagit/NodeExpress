@@ -1,0 +1,11 @@
+{
+  "name": "modules",
+  "version": "1.0.0",
+  "description": "A sample module",
+  "main": "modules.js",
+  "scripts": {
+    "test": "node.js"
+  },
+  "author": "",
+  "license": "ISC"
+}

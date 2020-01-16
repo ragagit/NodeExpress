@@ -1,0 +1,11 @@
+{
+
+	    "id":7,
+        "title":"Master Backbone.js",
+        "price":69,
+        "description":"Learn to create dynamic & modular web applications using BackboneJS framework.",
+        "image":"/images/8.png",
+        "isPopular":false
+    
+
+}

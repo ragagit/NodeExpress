@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Login</title>
+        <!--mobile setting-->
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <!--css inclusion-->
+        <link rel="stylesheet" href="/stylesheets/style.css" type="text/css">
+    </head>
+    <body>
+        <section class="container">
+            <section class="form-container">
+             <form action='/login' method='post'>
+                    <section class="form-group text-center"><h1>Sign In</h1>
+                        <% if(message!="") { %>
+                          <p class="btn btn-primary fullwidth"><%= message %></p>
+                        <% } %>
+                        <p>Please Sign In To continue</p>
+                    </section>
+                    <section class="form-group text-center">
+                        <img src="http://skillbakery.com/img/skill-logo-round.png" alt="skillbakery" class="logo">
+                    </section>
+                    <section class="form-group">
+                        <input type="text" name="username" class="form-control" placeholder="User Name" tabindex="1">
+                    </section>
+                    <section class="form-group">
+                        <input type="password" name="password" class="form-control" placeholder="Password" tabindex="2">
+                    </section>
+                    <section class="form-group">
+                        <input type="submit" id="btnLogin" class="btn btn-primary fullwidth" value="Login">
+                    </section>
+                    <section class="form-group">
+                        <section class="row">
+                            <section class="col-xs-6"><a href="/signup">Create an account</a></section>
+                        </section>
+                    </section>
+               </form>
+            </section>
+        </section>
+    </body>
+</html>

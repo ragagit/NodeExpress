@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+   <% include partials/template/head.ejs %>
+  </head>
+  <body>
+  
+    <% include partials/template/header.ejs %>
+    
+    <div class="main">
+            <div class="container">
+                <div class="div-main">
+                    <div class="row">
+                            <div> 
+                                <h1>SkillBakery Courses</h1>
+                                <div> We are offering <%=webdata.courses.length %> courses</div>
+                                <div class="col-md-9">
+                                    <h1>Our Popular Courses</h1>
+                                    <% webdata.courses.forEach(function(item) { %>
+                                    <% if(item.isPopular) { %>
+                                    <div class="main-inner">  
+                                        <div class="row">
+                                            <div class="col-md-5 col-sm-6">
+                                                <img class="pull-left img-responsive" src="<%= item.image %>" alt="<%=item.title %>">
+                                            </div>
+                                            <div class="col-md-7 col-sm-6">
+                                                <h2 style="margin-top: 0px;"><%=item.title %></h2>
+                                                <h3 class="Price badge">$ <%=item.price %></h3>
+                                                <p><%=item.description %></p>
+                                                <a href="#"> Popular </a>
+                                            </div>
+                                        </div> <!-- row close -->
+                                    </div> <!--main inner close -->
+                                    <% } %>
+                                    <% }); %>
+	                            </div> 
+                            </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    
+    <% include partials/template/footer.ejs %>
+    <% include partials/template/appscript.ejs %>
+  </body>
+</html>
+            

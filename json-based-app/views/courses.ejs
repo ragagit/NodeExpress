@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+   <% include partials/template/head.ejs %>
+  </head>
+  <body>
+  
+    <% include partials/template/header.ejs %>
+    
+    <div class="main">
+            <div class="container">
+                <div class="div-main">
+                    <div class="row">
+                           <!-- Courses will be displayed here -->
+                             <div>  
+                                <div class="col-md-3">
+                                    <div class="list-group">
+                                        <% webdata.courses.forEach(function(item) { %>
+                                            <a class="list-group-item active" href="/courses/<%= item.id %>"><%=item.title %></a>
+                                        <% }); %>
+                                    </div>
+                                </div>
+                                <div class="col-md-9">
+                                <div>
+                                    <div class="col-md-9">
+                                    <% if(typeof(id)!='undefined') { %>
+                                        <% var result = webdata.courses.filter(function( item ) { %>
+                                                    <% if(item.id == id) { %>
+                                                        <% include partials/contents/courseDetails.ejs %>  
+                                                    <% } %>
+                                        <% }); %>
+                                    <% } else { %>
+                                        <% webdata.courses.forEach(function(item) { %>
+                                           
+                                           <% include partials/contents/courseDetails.ejs %>    
+                                            
+                                        <% }); %>
+                                        <% } %>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                           <!-- Course display ends here --> 
+                    </div>
+                </div>
+            </div>
+    </div>
+    
+    <% include partials/template/footer.ejs %>
+    <% include partials/template/appscript.ejs %>
+  </body>
+</html>
+            

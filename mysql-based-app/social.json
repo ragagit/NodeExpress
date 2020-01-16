@@ -1,0 +1,11 @@
+{
+ "social" : [{
+    "shortname" : "twitter",
+    "img" : "/images/social/twitter.png",
+    "url" : "http://www.twitter.com/skillbakery"
+  },{
+    "shortname" : "facebook",
+    "img" : "/images/social/facebook.png",
+    "url" : "http://www.facebook.com/skillbakery"
+  }]
+}

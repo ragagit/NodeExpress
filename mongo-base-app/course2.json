@@ -1,0 +1,10 @@
+{
+
+	    "id":2,
+        "title":"Master AngularJS",
+        "price":69,
+        "description":"Master AngularJS and learn how to develop web applications including Single Page Applications (SPAs) using AngularJS.",
+        "image":"/images/6.jpg",
+        "isPopular":true
+    
+}

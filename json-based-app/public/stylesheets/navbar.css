@@ -1,0 +1,83 @@
+body {
+    padding-bottom: 20px;
+    background: #f1f1f1;
+}
+
+.navbar {
+}
+
+footer .container .div-main {
+    background: #fff;
+    border-top: 1px solid #ccc!important;
+    padding: 15px 5px 10px 10px;
+}
+
+.main .container .div-main {
+    padding-bottom: 30px;
+    background: #fff;
+    padding: 50px 20px;
+}
+
+.pad-rgt-20 {
+    padding-right: 20px;
+}
+
+.main img {
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.main h3 {
+    background: #be6817;
+    color: #fff;
+    font-size: 20px;
+    float: none;
+    padding: 2px 15px;
+}
+
+.main-inner .row {
+    border-bottom: 1px solid #ccc;
+    display: block;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    float: left;
+}
+
+.is-popular:after {
+    content: 'Popular';
+    background: orange;
+    height: 20px;
+    width: 67px;
+    font-size: 13px;
+    padding: 2px 4px;
+    margin-top: -10px;
+    position: absolute;
+    text-align: center;
+    font-weight: 600;
+    border-radius: 10px;
+    right: 0px;
+    top: 0px;
+    float: right;
+    margin-bottom: -5px;
+}
+
+
+.course-popular:after {
+    content: 'Popular';
+    background: orange;
+    height: 20px;
+    width: 67px;
+    font-size: 13px;
+    padding: 2px 4px;
+   
+    text-align: center;
+    font-weight: 600;
+    border-radius: 10px;
+    float:right;
+    
+    margin-bottom: -5px;
+}
+
+.is-hidden{
+    display: none;
+}

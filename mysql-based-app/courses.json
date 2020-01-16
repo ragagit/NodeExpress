@@ -1,0 +1,70 @@
+{
+  "courses": [{
+ 	    "id":1,
+        "title":"Master ReactJS",
+        "price":89,
+        "description":"Master the basics of ReactJS and be ready for the future of web development.",
+        "image":"/images/7.jpg",
+        "isPopular":true
+    },
+    {
+	    "id":2,
+        "title":"Master AngularJS",
+        "price":69,
+        "description":"Master AngularJS and learn how to develop web applications including Single Page Applications (SPAs) using AngularJS.",
+        "image":"/images/6.jpg",
+        "isPopular":true
+    },
+    {
+	    "id":3,
+        "title":"Master KnockoutJS",
+        "price":69,
+        "description":"Learn KnockoutJS - JavaScript implementation of the MVVM-Model View View Model with easy to understand examples.",
+        "image":"/images/2.jpg",
+        "isPopular":true
+    },
+    {
+	    "id":4,
+        "title":"Amazon Web Lamp Setup",
+        "price":49,
+        "description":"This course helps you in creating a Linux instance and installing PHP,MySQL and more stuff on Amazon EC2 instance.",
+        "image":"/images/3.jpg",
+        "isPopular":true
+    },
+    {
+	    "id":5,
+        "title":"Advanced jQuery Tips",
+        "price":49,
+        "description":"Explore various tips and tricks to get the most out of jQuery when building web applications",
+        "image":"/images/4.jpg",
+        "isPopular":false
+    },
+    {
+	    "id":6,
+        "title":"Browser Developer Tools",
+        "price":29,
+        "description":"Get to know various Browser Developer Tools for popular browsers & use them to debug & speed up your development process",
+        "image":"/images/5.jpg",
+        "isPopular":false
+    },
+    {
+	    "id":7,
+        "title":"Master Backbone.js",
+        "price":69,
+        "description":"Learn to create dynamic & modular web applications using BackboneJS framework.",
+        "image":"/images/8.png",
+        "isPopular":false
+    }
+
+],
+
+"social" : [{
+    "shortname" : "twitter",
+    "img" : "/images/social/twitter.png",
+    "url" : "http://www.twitter.com/skillbakery"
+  },{
+    "shortname" : "facebook",
+    "img" : "/images/social/facebook.png",
+    "url" : "http://www.facebook.com/skillbakery"
+  }]
+}

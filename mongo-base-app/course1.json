@@ -1,0 +1,8 @@
+{
+ 	    "id":1,
+        "title":"Master ReactJS",
+        "price":89,
+        "description":"Master the basics of ReactJS and be ready for the future of web development.",
+        "image":"/images/7.jpg",
+        "isPopular":true 
+}

@@ -1,0 +1,22 @@
+<article>
+  <span class="title">About SkillBakery: </span>
+  <p>
+    SkillBakery is one of the fastest growing online education company.
+
+    Our vision is to provide high quality education which is affordable and accessible to everyone
+
+    We believe that every one has their own way of learning and grasping things and that's why we provide self-paced HD quality contents,so you can learn what you love at your convinience
+
+    We currently offer courses in web development and will soon be publishing new courses in other categories as well
+  </p>
+  <ul class="group">
+    <!-- Social Icons will come here -->
+     <% about.social.forEach(function(item) { %>
+      <li style="list-style-type:none">
+      <a href="<%= item.url %>">
+        <img class="icon" src="<%= item.img %>" alt="icon for <%= item.shortname %>">
+        </a>
+     </li>
+    <% }); %>
+  </ul>
+</article>
